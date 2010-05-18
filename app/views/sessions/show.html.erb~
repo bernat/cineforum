@@ -1,0 +1,26 @@
+<p class="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @session.title %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= @session.desc %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @session.date %>
+</p>
+
+<h2>Comments</h2>
+<%= render :partial => "comments/comment",
+					 :collection => @session.comments %> 
+
+<h2>Add a comment:</h2>
+<%= render 'form' %>
+
+<%= link_to 'Edit', edit_session_path(@session) %> |
+<%= link_to 'Back', sessions_path %>

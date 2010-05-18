@@ -1,7 +1,5 @@
 Cineforum::Application.routes.draw do |map|
-  resources :sessions do
-  	resources :comments
-  end
+  resources :sessions
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
