@@ -1,5 +1,10 @@
 Cineforum::Application.routes.draw do |map|
-  resources :sessions do
+
+  devise_for :users, :path_names => { :sign_up => "register" } 
+  
+  root :to => "posts#index"
+	
+  resources :posts do
   	resources :comments
   end
 

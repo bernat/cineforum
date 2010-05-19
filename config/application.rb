@@ -42,5 +42,9 @@ module Cineforum
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+    
+    
+    config.filter_parameters << :password  
+		config.secret_token = 'ff58ec49e3ee8a56bae7ed6fada4eb8185ecf2a536deb756aa855f07659db2d93d57f88f4688658cd7c85f4d3c7ff4eafca0c35db7834bdd5b4f0964b64c827b'
   end
 end

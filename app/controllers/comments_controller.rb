@@ -1,17 +1,17 @@
 class CommentsController < ApplicationController
 
-	before_filter :authenticate, :only => :destroy 
+	before_filter :authenticate_user!, :only => :destroy 
 
 	def create
-		@session = Session.find(params[:session_id])
-		@comment = @session.comments.create(params[:comment])
-		redirect_to session_path(@session)
+		@post = Post.find(params[:post_id])
+		@comment = @post.comments.create(params[:comment])
+		redirect_to post_path(@post)
 	end
 	
 	def destroy
-		@session = Session.find(params[:session_id])
-		@comment = @session.comments.find(params[:id])
+		@post = Post.find(params[:post_id])
+		@comment = @post.comments.find(params[:id])
 		@comment.destroy 
-		redirect_to session_path(@session)  
+		redirect_to session_path(@post)  
 	end 
 end

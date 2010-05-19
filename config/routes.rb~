@@ -1,5 +1,12 @@
 Cineforum::Application.routes.draw do |map|
-  resources :sessions
+
+  devise_for :users, :path_names => { :sign_up => "register" } 
+  
+	root :to => "posts#index"
+	
+  resources :posts do
+  	resources :comments
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
