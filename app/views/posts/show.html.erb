@@ -15,6 +15,14 @@
   <%= @post.date %>
 </p>
 
+<h2>Proposed Movies</h2>
+<%= render :partial => "movies/movie",
+					 :collection => @post.movies %> 
+
+<h2>Add a movie:</h2>
+<%= render :partial => "movies/form" %>
+
+
 <h2>Comments</h2>
 <%= render :partial => "comments/comment",
 					 :collection => @post.comments %> 

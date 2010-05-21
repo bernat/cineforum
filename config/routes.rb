@@ -1,4 +1,6 @@
 Cineforum::Application.routes.draw do |map|
+  resources :movies
+
 
   devise_for :users, :path_names => { :sign_up => "register" } 
   
@@ -6,7 +8,9 @@ Cineforum::Application.routes.draw do |map|
 	
   resources :posts do
   	resources :comments
+  	resources :movies
   end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

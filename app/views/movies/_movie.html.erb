@@ -1,0 +1,15 @@
+<p>
+	<b>Title:</b>
+	<%= movie.title %>
+</p>	
+
+<p>
+	<b>Overview:</b>
+	<%= movie.desc %>
+</p>
+
+<p>
+	<%= link_to 'Destroy Movie', [movie.post, movie], 
+							:confirm => 'Are you sure?',
+							:method => :delete %>
+</p> 
